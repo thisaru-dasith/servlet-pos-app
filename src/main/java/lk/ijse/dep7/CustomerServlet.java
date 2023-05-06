@@ -17,8 +17,13 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/customers")
 public class CustomerServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { .
-
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("application/json");
+        Customer customer = new Customer("123", "Dasith", "galle");
+        PrintWriter out = resp.getWriter();
+        Jsonb jsonb = JsonbBuilder.create();
+        String json = jsonb.toJson(customer);
+        out.print(json);
 
     }
 
