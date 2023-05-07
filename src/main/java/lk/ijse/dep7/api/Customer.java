@@ -1,4 +1,4 @@
-package lk.ijse.dep7;
+package lk.ijse.dep7.api;
 
 import java.io.Serializable;
 
